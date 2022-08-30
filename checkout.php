@@ -159,6 +159,15 @@
 
 													$total += $i['produk_harga']*$jml;
 													$jumlah_total += $total;
+													$data = $i['produk_jumlah'];
+													// $jumlahp = $i['produk_jumlah'];
+													$pengurangan = (int)$data-(int)$jml;
+													
+													if($jml>$data){
+														echo "<script>alert('Jumlah stock yang anda masukkan melebihi stock toko kami')</script><script>document.location='keranjang.php';</script>";
+													} else {
+														mysqli_query($koneksi,"update produk set `produk_jumlah`='$pengurangan' where produk_id='$id_produk'");
+													}
 													?>
 
 													<tr>

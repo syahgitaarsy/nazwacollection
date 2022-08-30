@@ -31,7 +31,7 @@
                     <th>NAMA PRODUK</th>
                     <th>KATEGORI</th>
                     <th>HARGA</th>
-                    <th>JUMLAH</th>
+                    <th>STOCK</th>
                     <th width="15%">FOTO</th>
                     <th width="10%">OPSI</th>
                   </tr>

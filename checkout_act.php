@@ -2,6 +2,11 @@
 include 'koneksi.php';
 
 session_start();
+// $isi1 = mysqli_query($koneksi,'select * produk');
+// $data = mysqli_fetch_assoc($isi1);
+
+// $data1 = $data['produk_jumlah'];
+// $pengurangan = (int)$data1-(int)$jumlah;
 
 $id_customer = $_SESSION['customer_id'];
 
@@ -45,6 +50,7 @@ for($a = 0; $a < $jumlah_isi_keranjang; $a++){
 	$harga = $i['produk_harga'];
 	
 	mysqli_query($koneksi,"insert into transaksi values(NULL,'$invoice','$produk','$jumlah','$harga')");
+	// mysqli_query($koneksi,"update produk set `produk_jumlah`='$pengurangan'");
 
 	unset($_SESSION['keranjang'][$a]);
 }
